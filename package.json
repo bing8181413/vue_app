@@ -10,6 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.2",
+    "marked": "^0.3.18",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
