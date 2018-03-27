@@ -26,7 +26,6 @@
         },
         computed: {
             isFolder() {
-                console.log(this.model);
                 return this.model.children && this.model.children.length
             }
         },

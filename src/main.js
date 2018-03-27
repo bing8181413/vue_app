@@ -5,9 +5,6 @@ import App from './App';
 import router from './router';
 import marked from 'marked';
 import Tree from './components/tree';
-import AhaHeader from '@/page/container/header';
-// import AhaBody from './page/container/body';
-// import AhaAside from './page/container/aside';
 
 import BootstrapVue from 'bootstrap-vue';
 
@@ -20,6 +17,6 @@ Vue.use(BootstrapVue);
 new Vue({
   el: '#app',
   router,
-  components: {App, Tree, AhaHeader},
+  components: {App, Tree},
   template: '<App/>',
 });

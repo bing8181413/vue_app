@@ -1,22 +1,25 @@
 <template>
     <div id="app">
-        <!--<img src="./assets/logo.png">-->
-        <router-link to="/ChangeColor" class="btn btn-primary">Go to ChangeColor</router-link>
-        <router-link to="/md" class="btn btn-primary">Go to Markdown</router-link>
-        <router-link to="/" class="btn btn-primary">Go index</router-link>
-        <router-view/>
-        212121
-        <aha-header>
-            adasd
-        </aha-header>
-        <!--<aha-body></aha-body>-->
-        <!--<aha-header></aha-header>-->
+        <AhaHeader class="header"></AhaHeader>
+        <div class="main">
+            <AhaAside class="aside"></AhaAside>
+            <AhaBody class="body"></AhaBody>
+        </div>
     </div>
 </template>
 
 <script>
+    import AhaHeader from '@/page/container/header';
+    import AhaBody from '@/page/container/body';
+    import AhaAside from '@/page/container/aside';
+
     export default {
-        name: 'App'
+        name: 'App',
+        components: {
+            AhaHeader,
+            AhaBody,
+            AhaAside
+        }
     }
 </script>
 
@@ -34,12 +37,42 @@
         opacity: 0;
     }
 
+    html, body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .main {
+        width: 100%;
+        position: absolute;
+        top: 56px;
+        bottom: 0px;
+        left: 0px;
+        display: flex;
+        flex-flow:row;
+    }
+
+    .aside {
+        width: 200px;
+        background-color: #cc85d9;
+    }
+
+    .body {
+        width: 100%;
+    }
+
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        margin: 0;
+        border: 0;
+        height: 100%;
+        width: 100%;
     }
 </style>

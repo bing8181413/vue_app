@@ -1,5 +1,5 @@
 <template>
-  
+  <div>这是aside</div>
 </template>
 
 <script>
