@@ -1,22 +1,25 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import marked from 'marked'
-import Tree from './components/tree'
+import Vue from 'vue';
+import App from './App';
+import router from './router';
+import marked from 'marked';
+import Tree from './components/tree';
+import AhaHeader from '@/page/container/header';
+// import AhaBody from './page/container/body';
+// import AhaAside from './page/container/aside';
 
-import BootstrapVue from 'bootstrap-vue'
+import BootstrapVue from 'bootstrap-vue';
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    components: {App, Tree},
-    template: '<App/>'
-})
+  el: '#app',
+  router,
+  components: {App, Tree, AhaHeader},
+  template: '<App/>',
+});

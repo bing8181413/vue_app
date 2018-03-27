@@ -5,6 +5,12 @@
         <router-link to="/md" class="btn btn-primary">Go to Markdown</router-link>
         <router-link to="/" class="btn btn-primary">Go index</router-link>
         <router-view/>
+        212121
+        <aha-header>
+            adasd
+        </aha-header>
+        <!--<aha-body></aha-body>-->
+        <!--<aha-header></aha-header>-->
     </div>
 </template>
 

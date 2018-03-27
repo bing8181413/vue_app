@@ -5,7 +5,7 @@
             <span v-if="isFolder">[ {{open ? '-' : '+'}} ]</span>
         </div>
         <ul v-show="open">
-            <tree :model="model" v-for="model in model.children">
+            <tree :model="model" v-for="model in model.children" :key="model.$index">
             </tree>
             <li @click="addChild">+</li>
         </ul>
