@@ -1,27 +1,47 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import ChangeColor from '@/components/ChangeColor'
-import Md from '@/components/md'
+import Vue from 'vue';
+import Router from 'vue-router';
+import login from '@/page/container/login';
+import main from '@/page/container/main';
+import table from '@/page/demo/table';
+import HelloWorld from '@/components/HelloWorld';
+import ChangeColor from '@/components/ChangeColor';
+import Md from '@/components/md';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-    routes: [
+  routes: [
+    {
+      path: '/',
+      name: 'login',
+      component: login,
+    },
+    {
+      path: '/main',
+      component: main,
+      children: [
         {
-            path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
+          path: 'table',
+          name: 'table',
+          component: table,
         },
         {
-            path: '/ChangeColor',
-            name: 'ChangeColor',
-            component: ChangeColor
+          path: 'HelloWorld',
+          name: 'HelloWorld',
+          component: HelloWorld,
         },
         {
-            path: '/md',
-            name: 'Md',
-            component: Md
-        }
-    ]
-})
+          path: 'ChangeColor',
+          name: 'ChangeColor',
+          component: ChangeColor,
+        },
+        {
+          path: 'md',
+          name: 'Md',
+          component: Md,
+          meta: ['添加数据', '添加商铺'],
+        },
+      ],
+    },
+  ],
+});

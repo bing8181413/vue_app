@@ -4,7 +4,6 @@
             <div class="col-sm-6">
                 <textarea class="" v-model="input" debounce=500></textarea>
             </div>
-            <b-alert show> Hello {{ input }}! </b-alert>
             <div class="col-sm-6">
                 <div v-html="markedContent"></div>
             </div>
