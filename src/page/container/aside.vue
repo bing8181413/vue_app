@@ -16,6 +16,19 @@
           <el-menu-item index=""><i class="el-icon-menu"></i>首页</el-menu-item>
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-location"></i>导航一</template>
+<!--=======-->
+        <!--<el-menu :default-active="defaultActive" style="min-height: 100%;"-->
+                 <!--router-->
+                 <!--background-color="#545c64"-->
+                 <!--text-color="#fff"-->
+                 <!--active-text-color="#ffd04b">-->
+          <!--<el-menu-item index="/main/table"><i class="el-icon-menu"></i>首页</el-menu-item>-->
+          <!--<el-submenu index="1" router="false">-->
+            <!--<template slot="title">-->
+              <!--<i class="el-icon-location"></i>-->
+              <!--<span slot="title">导航一</span>-->
+            <!--</template>-->
+<!--&gt;>>>>>> Stashed changes-->
             <el-menu-item-group>
               <!--<span slot="title">分组一</span>-->
               <el-menu-item index="/main/table">table</el-menu-item>

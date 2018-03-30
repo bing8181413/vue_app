@@ -1,12 +1,12 @@
 <template>
   <el-container>
-    <el-aside class="aside" width="250px">
-      <aha-aside></aha-aside>
-    </el-aside>
+    <el-header style="height: 80px;background-color: #409eff;">
+      <aha-top></aha-top>
+    </el-header>
     <el-container>
-      <el-header style="height: 80px;background-color: #409eff;">
-        <aha-top></aha-top>
-      </el-header>
+      <el-aside class="aside" width="250px">
+        <aha-aside></aha-aside>
+      </el-aside>
       <el-main>
         <aha-main></aha-main>
       </el-main>
@@ -30,7 +30,7 @@
 </script>
 
 <style scoped>
-  .el-container{
+  .el-container {
     min-height: 100%;
   }
 </style>
