@@ -1,10 +1,10 @@
 <template>
   <el-container>
-    <el-aside class="aside" width="200px">
+    <el-aside class="aside" width="250px">
       <aha-aside></aha-aside>
     </el-aside>
     <el-container>
-      <el-header>
+      <el-header style="height: 80px;background-color: #409eff;">
         <aha-top></aha-top>
       </el-header>
       <el-main>
