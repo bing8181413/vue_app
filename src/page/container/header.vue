@@ -29,7 +29,7 @@
       };
     },
     watch: {
-      "$route": "watchRouter"
+      '$route': 'watchRouter',
     },
     methods: {
       watchRouter() {
@@ -64,6 +64,26 @@
     line-height: 80px;
     cursor: pointer;
   }
+
+  /*.header-operations li::before {*/
+  /*content: " ";*/
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 100%;*/
+  /*width: 0;*/
+  /*height: 100%;*/
+  /*border-bottom: 2px solid #000;*/
+  /*transition: 0.2s all linear;*/
+  /*}*/
+
+  /*.header-operations li:hover::before {*/
+  /*width: 100%;*/
+  /*left: 0;*/
+  /*}*/
+
+  /*.header-operations li:hover ~ .header-operations li::before {*/
+  /*left: 0;*/
+  /*}*/
 
   .header-operations li:not(.is-disabled):focus,
   .header-operations li:not(.is-disabled):hover {

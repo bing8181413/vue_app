@@ -57,7 +57,7 @@
 		methods: {
 			...mapActions(['getAdminData']),
 			async submitForm(formName) {
-        this.$router.push('main/table')
+        this.$router.push('main/table');
 
 				// this.$refs[formName].validate(async (valid) => {
 				// 	if (valid) {
