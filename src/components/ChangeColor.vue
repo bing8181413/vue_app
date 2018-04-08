@@ -2,7 +2,9 @@
   <div>
     <!--<h1 v-text="haha"></h1>-->
     <!--<input type="text" v-model="haha">-->
-    <p id="color" :style="colortmp" @mouseenter="randomColor" @mouseleave="randomColor">移入移出 我会变色</p>
+    <p id="color" :style="colortmp" @mouseenter="randomColor(1)" @mouseleave="randomColor(2)">{{colortmp.color}} 移入变色
+      移出静止</p>
+    <input type="text" v-model="colortmp.color" :maxlength="7">
   </div>
 </template>
 
@@ -13,18 +15,38 @@
       return {
         haha: 'test message',
         colortmp: {},
+        time: null,
+        getColor: '',
       };
     },
+    watch: {
+      'colortmp.color': function(color) {
+        let haha = (color.indexOf('#') == -1) ? ('#' + color) : color;
+        this.colortmp['color'] = haha;
+        return haha;
+      },
+    },
     methods: {
-      randomColor() {
-        let sixcolor = '';
-        const orderNum = '0123456789ABCDEF';
+      randomColor(category) {
+        let self = this;
         let rdm = function() {
-          return orderNum[Math.floor(Math.random() * 16)];
+          // 生成随机 16进制的2位数数
+          let rdmNum = Math.floor(Math.random() * 0xffffff).toString(16);
+          // 2位数可能有空余的0会被略去 所以补0位
+          return [0, 0, 0, 0, 0, 0].map(function(v, k) {
+            return rdmNum.split('').reverse()[k] || 0;
+          }).reverse().join('');
         };
-        sixcolor = '#' + rdm() + rdm() + rdm() + rdm() + rdm() + rdm();
-        this.colortmp = {color: sixcolor};
-        return sixcolor;
+        if (!this.time) {
+          this.time = setInterval(function() {
+            let sixcolor = '#' + rdm();
+            // console.log(sixcolor);
+            self.colortmp = {color: sixcolor};
+          }, 500);
+        } else {
+          clearInterval(this.time);
+          this.time = null;
+        }
       },
     },
     created() {
@@ -48,7 +70,14 @@
 </script>
 
 <style scoped>
+  input {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 15px 25px;
+  }
+
   #color {
+    width: 800px;
     display: block;
     text-align: center;
     box-sizing: border-box;
