@@ -20,10 +20,14 @@
       };
     },
     watch: {
-      'colortmp.color': function(color) {
-        let haha = (color.indexOf('#') == -1) ? ('#' + color) : color;
-        this.colortmp['color'] = haha;
-        return haha;
+      'colortmp': {
+        handler(colortmp) {
+          let color = colortmp.color;
+          let haha = (color.indexOf('#') == -1) ? ('#' + color) : color;
+          this.colortmp['color'] = haha;
+          return haha;
+        },
+        // deep: true,
       },
     },
     methods: {
