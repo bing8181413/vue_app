@@ -4,11 +4,33 @@
     <!--<input type="text" v-model="haha">-->
     <p id="color" :style="colortmp" @mouseenter="randomColor(1)" @mouseleave="randomColor(2)">{{colortmp.color}} 移入变色
       移出静止</p>
-    <input type="text" v-model="colortmp.color" :maxlength="7">
+    <input type="text" v-model="colortmp.color" :maxlength="7" v-focus>
+    <div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue';
+
+  new Vue({
+    el: '#hook-arguments-example',
+    data: {
+      message: 'hello!',
+    },
+  });
+  Vue.directive('demo', {
+    bind: function(el, binding, vnode) {
+      var s = JSON.stringify;
+      el.innerHTML =
+          `name:  ${s(binding.name)} <br>
+          value: ${s(binding.value)} <br>
+          expression: ${s(binding.expression)} <br>
+          argument: ${s(binding.arg)} <br>
+          modifiers: ${s(binding.modifiers)} <br>'
+          vnode keys: ${ Object.keys(vnode).join(', ')}`;
+    },
+  });
+
   export default {
     name: 'ChangeColor',
     data() {
@@ -18,6 +40,14 @@
         time: null,
         getColor: '',
       };
+    },
+    directives: {// 局部指令
+      focus: {
+        // 指令的定义
+        inserted: function(el) {
+          el.focus();
+        },
+      },
     },
     watch: {
       'colortmp': {
@@ -77,7 +107,11 @@
   input {
     border: 1px solid #ccc;
     box-sizing: border-box;
-    padding: 15px 25px;
+    padding: 10px 15px;
+  }
+
+  input:focus {
+    border: 1px solid red;
   }
 
   #color {
