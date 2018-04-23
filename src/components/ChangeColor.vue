@@ -5,31 +5,12 @@
     <p id="color" :style="colortmp" @mouseenter="randomColor(1)" @mouseleave="randomColor(2)">{{colortmp.color}} 移入变色
       移出静止</p>
     <input type="text" v-model="colortmp.color" :maxlength="7" v-focus>
-    <div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
+    <div id="hook-arguments-example" v-demo:foo.a.b="colortmp.color"></div>
   </div>
 </template>
 
 <script>
-  import Vue from 'vue';
-
-  new Vue({
-    el: '#hook-arguments-example',
-    data: {
-      message: 'hello!',
-    },
-  });
-  Vue.directive('demo', {
-    bind: function(el, binding, vnode) {
-      var s = JSON.stringify;
-      el.innerHTML =
-          `name:  ${s(binding.name)} <br>
-          value: ${s(binding.value)} <br>
-          expression: ${s(binding.expression)} <br>
-          argument: ${s(binding.arg)} <br>
-          modifiers: ${s(binding.modifiers)} <br>'
-          vnode keys: ${ Object.keys(vnode).join(', ')}`;
-    },
-  });
+  import {demo} from '../direcitve/index';
 
   export default {
     name: 'ChangeColor',
@@ -39,11 +20,12 @@
         colortmp: {},
         time: null,
         getColor: '',
+        message: 'helloooooooo world !!!',
       };
     },
     directives: {// 局部指令
+      demo: demo,
       focus: {
-        // 指令的定义
         inserted: function(el) {
           el.focus();
         },

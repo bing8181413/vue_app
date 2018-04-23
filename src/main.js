@@ -3,7 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import store from './store/'
+import store from './store/';
 import marked from 'marked';
 import Tree from './components/tree';
 
@@ -24,4 +24,4 @@ new Vue({
   components: {App},
   template: '<App/>',
   // render: h => h(App)
-})
+});

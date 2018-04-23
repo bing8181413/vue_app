@@ -17,19 +17,19 @@
           <el-menu-item index=""><i class="el-icon-menu"></i>首页</el-menu-item>
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-location"></i>导航一</template>
-<!--=======-->
-        <!--<el-menu :default-active="defaultActive" style="min-height: 100%;"-->
-                 <!--router-->
-                 <!--background-color="#545c64"-->
-                 <!--text-color="#fff"-->
-                 <!--active-text-color="#ffd04b">-->
-          <!--<el-menu-item index="/main/table"><i class="el-icon-menu"></i>首页</el-menu-item>-->
-          <!--<el-submenu index="1" router="false">-->
+            <!--=======-->
+            <!--<el-menu :default-active="defaultActive" style="min-height: 100%;"-->
+            <!--router-->
+            <!--background-color="#545c64"-->
+            <!--text-color="#fff"-->
+            <!--active-text-color="#ffd04b">-->
+            <!--<el-menu-item index="/main/table"><i class="el-icon-menu"></i>首页</el-menu-item>-->
+            <!--<el-submenu index="1" router="false">-->
             <!--<template slot="title">-->
-              <!--<i class="el-icon-location"></i>-->
-              <!--<span slot="title">导航一</span>-->
+            <!--<i class="el-icon-location"></i>-->
+            <!--<span slot="title">导航一</span>-->
             <!--</template>-->
-<!--&gt;>>>>>> Stashed changes-->
+            <!--&gt;>>>>>> Stashed changes-->
             <el-menu-item-group>
               <el-menu-item index="/main/table">table</el-menu-item>
               <el-menu-item index="/main/HelloWorld">HelloWorld</el-menu-item>
@@ -70,7 +70,10 @@
   @import '../../style/mixin';
 
   .aside {
+    background-color: #324057;
     min-height: 100%;
+    /*border: 2px #ffd04b solid;*/
+    box-sizing: border-box;
   }
 
   /*.el-menu-vertical-demo:not(.el-menu--collapse) {*/
