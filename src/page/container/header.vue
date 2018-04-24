@@ -25,11 +25,11 @@
   export default {
     data() {
       return {
-        activeIndex: '',
+        activeIndex: "",
       };
     },
     watch: {
-      '$route': 'watchRouter',
+      "$route": "watchRouter",
     },
     methods: {
       watchRouter() {

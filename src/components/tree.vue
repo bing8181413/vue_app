@@ -2,7 +2,7 @@
   <li>
     <div class="tree-title" @click="toggle" @dblclick="changeType">
       {{model.name}}
-      <span v-if="isFolder" :class="[open]">[ {{open ? '合' : '开'}} ]</span>
+      <span v-if="isFolder" :class="[open]">[ {{open ? "合" : "开"}} ]</span>
     </div>
     <ul v-show="open">
       <tree :model="model" v-for="model in model.children" :key="model.$index">
@@ -12,10 +12,10 @@
   </li>
 </template>
 <script>
-  import Vue from 'vue';
+  import Vue from "vue";
 
   export default {
-    name: 'tree',
+    name: "tree",
     data() {
       return {
         open: false,
@@ -37,13 +37,13 @@
       },
       changeType() {
         if (!this.isFolder) {
-          Vue.set(this.model, 'children', []);
+          Vue.set(this.model, "children", []);
           this.addChild();
           this.open = true;
         }
       },
       addChild() {
-        this.model.children.push({name: 'new staff'});
+        this.model.children.push({ name: "new staff" });
       },
     },
   };
