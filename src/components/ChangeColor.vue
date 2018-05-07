@@ -5,19 +5,24 @@
     <p id="color" :style="colortmp" @mouseenter="randomColor(1)" @mouseleave="randomColor(2)">{{colortmp.color}} 移入变色
       移出静止</p>
     <input type="text" v-model="colortmp.color" :maxlength="7" v-focus>
+    <close :color="colortmp.color"></close>
     <div id="hook-arguments-example" v-demo:foo.a.b="colortmp.color"></div>
   </div>
 </template>
 
 <script>
 import { demo } from "../direcitve/index";
+import close from "../components/icon/close";
 
 export default {
   name: "ChangeColor",
+  components: {
+    close: close
+  },
   data() {
     return {
       haha: "test message",
-      colortmp: {},
+      colortmp: { color: "red" },
       time: null,
       getColor: "",
       message: "helloooooooo world !!!"
