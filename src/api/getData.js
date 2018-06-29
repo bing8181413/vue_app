@@ -1,4 +1,4 @@
-import fetch from '@/config/fetch'
+import fetch from '@/config/fetch';
 
 /**
  * 登陆
@@ -30,7 +30,6 @@ export const apiCount = date => fetch('/statis/api/' + date + '/count');
 
 export const apiAllCount = () => fetch('/statis/api/count');
 
-
 /**
  * 所有api请求信息
  */
@@ -48,7 +47,6 @@ export const userCount = date => fetch('/statis/user/' + date + '/count');
  */
 
 export const orderCount = date => fetch('/statis/order/' + date + '/count');
-
 
 /**
  * 某一天管理员注册量
@@ -73,7 +71,7 @@ export const adminCount = () => fetch('/admin/count');
  */
 
 export const cityGuess = () => fetch('/v1/cities', {
-	type: 'guess'
+    type: 'guess',
 });
 
 /**
@@ -87,9 +85,9 @@ export const addShop = data => fetch('/shopping/addShop', data, 'POST');
  */
 
 export const searchplace = (cityid, value) => fetch('/v1/pois', {
-	type: 'search',
-	city_id: cityid,
-	keyword: value
+    type: 'search',
+    city_id: cityid,
+    keyword: value,
 });
 
 /**
@@ -104,13 +102,11 @@ export const getCategory = restaurant_id => fetch('/shopping/getcategory/' + res
 
 export const addCategory = data => fetch('/shopping/addcategory', data, 'POST');
 
-
 /**
  * 添加食品
  */
 
 export const addFood = data => fetch('/shopping/addfood', data, 'POST');
-
 
 /**
  * category 种类列表
@@ -159,7 +155,6 @@ export const getFoods = data => fetch('/shopping/v2/foods', data);
  */
 
 export const getFoodsCount = data => fetch('/shopping/v2/foods/count', data);
-
 
 /**
  * 获取menu列表
