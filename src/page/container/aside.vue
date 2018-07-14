@@ -35,6 +35,7 @@
               <el-menu-item index="/main/HelloWorld">HelloWorld</el-menu-item>
               <el-menu-item index="/main/ChangeColor" router="false">ChangeColor</el-menu-item>
               <el-menu-item index="/main/md" router="false">md</el-menu-item>
+              <el-menu-item index="/main/cm" router="false">水平垂直居中</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>

@@ -5,8 +5,9 @@
             移入变色 移出停止
         </p>
         <input type="text" v-model="colorTmp.color" :maxlength="7" v-focus>
-        <template v-for="n in 5">
-            <span v-text="rdmColors[rdmColors.length-n]||colorTmp.color" v-bind:style="{color:rdmColors[rdmColors.length-n]||colorTmp.color}"></span>
+        <br>
+        <template v-for="(rdmColor ,item) in rdmColors">
+            <span v-bind:style="{background:rdmColors[rdmColors.length-item-1]||colorTmp.color}"></span>
         </template>
         <div id="hook-arguments-example" v-demo:foo.a.b="colorTmp.color"></div>
     </div>
@@ -19,27 +20,27 @@
     export default {
         name: 'ChangeColor',
         components: {
-            close: close,
+            close: close
         },
         data() {
             return {
                 haha: 'test message',
-                colorTmp: {color: '#10a1cb', 'border-color': '#10a1cb'},
+                colorTmp: { color: '#10a1cb', 'border-color': '#10a1cb' },
                 time: null,
                 getColor: '',
                 message: 'helloooooooo world !!!',
                 rdmColors: [],
-                interval: 300,
+                interval: 500
             };
         },
         directives: {
             // 局部指令
             demo: demo,
             focus: {
-                inserted: function(el) {
+                inserted: function (el) {
                     el.focus();
-                },
-            },
+                }
+            }
         },
         watch: {
             colorTmp: {
@@ -49,36 +50,36 @@
                     this.colorTmp['color'] = haha;
                     this.colorTmp['border-color'] = haha;
                     return haha;
-                },
+                }
                 // deep: true,
-            },
+            }
         },
         methods: {
             randomColor(category) {
                 let self = this;
-                let rdm = function() {
+                let rdm = function () {
                     // 生成随机 16进制的2位数数
                     let rdmNum = Math.floor(Math.random() * 0xffffff).toString(16);
                     // 2位数可能有空余的0会被略去 所以补0位
                     return [0, 0, 0, 0, 0, 0]
-                        .map(function(v, k) {
+                        .map(function (v, k) {
                             return rdmNum.split('').reverse()[k] || 0;
                         })
                         .reverse()
                         .join('');
                 };
                 if (!this.time) {
-                    this.time = setInterval(function() {
+                    this.time = setInterval(function () {
                         let sixcolor = '#' + rdm();
                         // console.log(sixcolor);
                         self.rdmColors.push(sixcolor);
-                        self.colorTmp = {color: sixcolor};
+                        self.colorTmp = { color: sixcolor };
                     }, this.interval);
                 } else {
                     clearInterval(this.time);
                     this.time = null;
                 }
-            },
+            }
         },
         created() {
             // console.log(1111);
@@ -87,16 +88,16 @@
             validation() {
                 return {
                     name: !!this.newUser.name.trim(),
-                    email: emailRE.test(this.newUser.email),
+                    email: emailRE.test(this.newUser.email)
                 };
             },
             isValid() {
                 const validation = this.validation;
-                return Object.keys(validation).every(function(key) {
+                return Object.keys(validation).every(function (key) {
                     return validation[key];
                 });
-            },
-        },
+            }
+        }
     };
 </script>
 
@@ -116,11 +117,12 @@
 
     span {
         display: inline-block;
-        width: 100px;
+        width: 0;
+        height: 0;
         margin: 1px 1px;
         border: 1px solid #ccc;
-        border-radius: 7px;
-        padding: 10px 15px;
+        border-radius: 50%;
+        padding: 16px;
         text-align: center;
         font-size: x-large;
     }
