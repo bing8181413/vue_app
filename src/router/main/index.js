@@ -1,6 +1,10 @@
 import main from '@/page/container/main';
 
+
 import table from '@/page/demo/table';
+import delegate from '@/page/demo/delegate';
+
+
 import HelloWorld from '@/components/HelloWorld';
 import ChangeColor from '@/components/ChangeColor';
 import Md from '@/components/md';
@@ -47,6 +51,12 @@ mainRouter.children.pushArrayOrObject(
             name: 'CenterMiddle',
             component: CenterMiddle,
             meta: ['水平垂直居中']
+        },
+        {
+            path: 'delegate',
+            name: 'delegate',
+            component: delegate,
+            meta: ['事件委托']
         }
     ]
 );

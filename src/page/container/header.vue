@@ -16,6 +16,7 @@
           <el-menu-item index="/main/ChangeColor">改变颜色</el-menu-item>
           <el-menu-item index="/main/md">Markdown</el-menu-item>
           <el-menu-item index="/main/cm">水平垂直居中</el-menu-item>
+          <el-menu-item index="/main/delegate">事件委托</el-menu-item>
         </el-submenu>
       </el-menu>
     </el-col>
