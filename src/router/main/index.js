@@ -3,6 +3,7 @@ import main from '@/page/container/main';
 
 import table from '@/page/demo/table';
 import delegate from '@/page/demo/delegate';
+import inlineBlock from '@/page/demo/inlineBlock';
 
 
 import HelloWorld from '@/components/HelloWorld';
@@ -57,6 +58,12 @@ mainRouter.children.pushArrayOrObject(
             name: 'delegate',
             component: delegate,
             meta: ['事件委托']
+        },
+        {
+            path: 'inlineBlock',
+            name: 'inlineBlock',
+            component: inlineBlock,
+            meta: ['inline-block']
         }
     ]
 );
