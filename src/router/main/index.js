@@ -18,6 +18,7 @@ let mainRouter = {
 Array.prototype.pushArrayOrObject = function (arrayOrObject) {
     if (arrayOrObject.constructor == Array) {
         this.push(...arrayOrObject);
+        console.log(this);
     } else {
         this.push(arrayOrObject);
     }

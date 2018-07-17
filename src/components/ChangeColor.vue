@@ -7,7 +7,7 @@
         <input type="text" v-model="colorTmp.color" :maxlength="7" v-focus>
         <br>
         <template v-for="(rdmColor ,item) in rdmColors">
-            <span v-bind:style="{background:rdmColors[rdmColors.length-item-1]||colorTmp.color}"></span>
+            <span class="circle" v-bind:style="{background:rdmColors[rdmColors.length-item-1]||colorTmp.color}"></span>
         </template>
         <div id="hook-arguments-example" v-demo:foo.a.b="colorTmp.color"></div>
     </div>
@@ -115,12 +115,11 @@
         border: 1px solid #f29a55;
     }
 
-    span {
+    .circle {
         display: inline-block;
         width: 0;
         height: 0;
         margin: 1px 1px;
-        border: 1px solid #ccc;
         border-radius: 50%;
         padding: 16px;
         text-align: center;

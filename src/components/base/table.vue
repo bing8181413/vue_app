@@ -21,6 +21,10 @@
 </template>
 
 <script>
+    import config from '@/config/import';
+
+    console.log(config);
+
     export default {
         name: '',
         data() {
