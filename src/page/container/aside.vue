@@ -19,6 +19,7 @@
                             <el-menu-item index="/main/cm" router="false">水平垂直居中</el-menu-item>
                             <el-menu-item index="/main/delegate" router="false">事件委托</el-menu-item>
                             <el-menu-item index="/main/inlineBlock" router="false">inlineBlock</el-menu-item>
+                            <el-menu-item index="/main/reflect" router="false">reflect反射</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                 </el-menu>
