@@ -5,17 +5,25 @@
         style="width: 100%">
         <el-table-column
             prop="date"
-            label="日期"
+            label="声明方式"
             width="180">
         </el-table-column>
         <el-table-column
             prop="name"
-            label="姓名"
+            label="变量提升"
             width="180">
         </el-table-column>
         <el-table-column
             prop="address"
-            label="地址">
+            label="作用域">
+        </el-table-column>
+        <el-table-column
+            prop="address"
+            label="初始值">
+        </el-table-column>
+        <el-table-column
+            prop="address"
+            label="重复定义">
         </el-table-column>
     </el-table>
 </template>
@@ -31,21 +39,25 @@
             return {
                 tableData: [
                     {
-                        date: '2016-05-02',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1518 弄',
-                    }, {
-                        date: '2016-05-04',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1517 弄',
-                    }, {
-                        date: '2016-05-01',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1519 弄',
-                    }, {
-                        date: '2016-05-03',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1516 弄',
+                        name: 'const',
+                        variable: '否',
+                        scope: '块级',
+                        needInit: '需要',
+                        duplicateDefinition: '不允许',
+                    },
+                    {
+                        name: 'let',
+                        variable: '否',
+                        scope: '块级',
+                        needInit: '不需要',
+                        duplicateDefinition: '不允许',
+                    },
+                    {
+                        name: 'var',
+                        variable: '是',
+                        scope: '函数级',
+                        needInit: '不需要',
+                        duplicateDefinition: '允许',
                     },
                 ],
             };
