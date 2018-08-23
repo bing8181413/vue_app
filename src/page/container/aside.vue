@@ -11,7 +11,7 @@
                     <el-menu-item index=""><i class="el-icon-menu"></i>首页</el-menu-item>
                     <el-submenu index="1">
                         <template slot="title"><i class="el-icon-location"></i>菜单</template>
-                        <el-menu-item-group >
+                        <el-menu-item-group>
                             <el-menu-item index="/main/table">table</el-menu-item>
                             <el-menu-item index="/main/HelloWorld">HelloWorld</el-menu-item>
                             <el-menu-item index="/main/ChangeColor" router="false">ChangeColor</el-menu-item>
@@ -60,9 +60,10 @@
         box-sizing: border-box;
     }
 
-    .borderRight{
+    .borderRight {
         border-right: 0;
     }
+
     /*.el-menu-vertical-demo:not(.el-menu--collapse) {*/
     /*width: 200px;*/
     /*min-height: 400px;*/
